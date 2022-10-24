@@ -1,1 +1,0 @@
-<% String redirectURL = "view/mainPage.jsf"; response.sendRedirect(redirectURL); %>
