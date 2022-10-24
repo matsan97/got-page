@@ -5,16 +5,14 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-
     <h:body>
         <ui:composition template="/template/base.xhtml">
             <ui:define name="content">
                 <h:form id="form">
                     <p:growl id="msgs" showDetail="true" skipDetailIfEqualsSummary="true"/>
                     <div>
-                        <h5>GOT VISTA ROSHKA</h5>
-                        <p:accordionPanel widgetVar="G.O.T. View">
-                            <p:tab title="BUSCAR LOCALIZACIONES DE PERSONAJES" >
+                        <p:accordionPanel widgetVar="G.O.T. View" styleClass="tab-opacity">
+                            <p:tab title="BUSCAR LOCALIZACIONES DE PERSONAJES">
                                 <div>
                                     <h5>BUSQUEDA</h5>
                                     <span class="ui-input-icon-left">
@@ -93,10 +91,12 @@
                                             <h:outputText value="#{path.id}" />
                                         </p:column>
                                     </p:dataTable>
-                                    <!--No encontre el motivo por el cual no se dispara el metodo "ordenarCaminos". Lo deje de esta manera ya por falta de tiempo-->
+                                    <!--No encontre el motivo por el cual no se dispara el metodo "sortPaths" desde el componente <p:menuitem />.
+                                        Al hacer click en el dialog para ver el recorrido falla el componente con f5 se puede continuar probando
+                                    -->
                                     <p:contextMenu for="item6path">
                                         <p:menuitem value="VER RECORRIDO" update="@form" icon="pi pi-search"
-                                                    oncomplete="PF('pathDialog').show()" actionListener="#{GotBean.ordenarCaminos()}" />
+                                                    oncomplete="PF('pathDialog').show()" actionListener="#{GotBean.sortPaths()}" />
                                     </p:contextMenu>
                                     <p:dialog header="Opciones" widgetVar="pathDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false" width="25%">
                                         <p:outputPanel id="pathDetail" style="text-align:center;">

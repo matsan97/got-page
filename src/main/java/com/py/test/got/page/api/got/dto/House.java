@@ -1,5 +1,6 @@
 package com.py.test.got.page.api.got.dto;
 
+import java.sql.Timestamp;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Data;

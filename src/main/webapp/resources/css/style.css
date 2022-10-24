@@ -1,8 +1,108 @@
 @CHARSET "UTF-8";
 
 
-.inputHora{
-    width:70px;	
+
+.graphic-image {
+    width: 50%;
+    height: 40%;
+    
+}
+
+.Bimage {
+    font-size: 40px;
+    font-weight: 600;
+    background-image: linear-gradient(to left, #553c9a, #b393d3);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.bg-image{
+    background-image:url(#{request.contextPath}/resources/images/snow.jpg);
+}
+.logo-img{
+    background-image:url(#{request.contextPath}/resources/images/logo.jpg);
+}
+
+.four h1 {
+    text-align: center;
+    padding-bottom: 0.7em;
+}
+.four h1 span {
+    font-weight: 300;
+    word-spacing: 3px;
+    line-height: 2em;
+    padding-bottom: 0.35em;
+    color: rgba(0, 0, 0, 0.5);
+}
+.four h1:before {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    height: 1px;
+    content: "";
+    left: 50%;
+    margin-left: -30px;
+    background-color: #777;
+}
+
+html {
+    height:100%;
+}
+
+body {
+    margin:0;
+}
+
+.bg {
+    animation:slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+    bottom:0;
+    left:-50%;
+    opacity:.5;
+    position:fixed;
+    right:-50%;
+    top:0;
+    z-index:-1;
+}
+
+.bg2 {
+    animation-direction:alternate-reverse;
+    animation-duration:4s;
+}
+
+.bg3 {
+    animation-duration:5s;
+}
+
+.content {
+    border-radius:.25em;
+    box-sizing:border-box;
+    left:50%;
+    padding:10vmin;
+    position:fixed;
+    text-align:center;
+    top:50%;
+    transform:translate(-50%, -50%);
+}
+
+h1 {
+    font-family:monospace;
+}
+
+@keyframes slide {
+    0% {
+        transform:translateX(-25%);
+    }
+
+    100% {
+        transform:translateX(25%);
+    }
+}
+
+.tab-opacity {
+    opacity: 0.8!important;
 }
 
 .evento1 .fc-event,
@@ -132,7 +232,7 @@ body {
     background:darkgreen;
     border-color: #23a38f;
     width: 80%; 
-    
+
 }
 .ui-button.enfechaEspecial { 
     color: #ffffff;

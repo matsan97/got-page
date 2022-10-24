@@ -15,15 +15,13 @@
     <h:body style="background-color:#282832">
         <div style="left:0px; height:53px;">&nbsp;</div>
         <h:form id="base">
-            <p:growl id="messages" />
-
-            <p:menubar>
-                <p:submenu label="Administrative" icon="fa fa-group" >
-                    <p:menuitem value="&nbsp;Consultation" action="consultation" icon="fa fa-user-plus"/>
-                    <p:menuitem value="&nbsp;Doctors" action="doctors" icon="fa fa-user-plus"/>
-                    <p:menuitem value="&nbsp;Patients" action="patients" icon="fa fa-user-plus"/>
-                </p:submenu>
-            </p:menubar>
+            <div class="bg"></div>
+            <div class="bg bg2"></div>
+            <div class="bg bg3"></div>
+            <div class="content">
+                <p:graphicImage name="snow.png" library="images" class="graphic-image"/>
+            </div>
+                <h1>G.O.T. Management</h1> 
         </h:form>
         <div style="background-color:#FFFFFF;margin:0px 2px 0px 2px;padding:0px 3px 0px 3px;">
             <ui:insert name="content" >
