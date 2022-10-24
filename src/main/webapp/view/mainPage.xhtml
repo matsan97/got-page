@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:body>
+        <ui:composition template="/template/base.xhtml">
+            <ui:define name="content">
+                <h:form id="form">
+                    <p:growl id="msgs" showDetail="true" skipDetailIfEqualsSummary="true"/>
+                    <div>
+                        <h5>GOT VISTA ROSHKA</h5>
+                        <p:accordionPanel widgetVar="G.O.T. View">
+                            <p:tab title="BUSCAR LOCALIZACIONES DE PERSONAJES" >
+                                <div>
+                                    <h5>BUSQUEDA</h5>
+                                    <span class="ui-input-icon-left">
+                                        <i class="pi pi-search" />
+                                        <p:inputText placeholder="nombre del personaje" value="#{GotBean.characterName}"/>
+                                        <p:spacer width="10"/> 
+                                        <p:commandButton type="submit" value="BUSCAR" styleClass="ui-button-secondary" actionListener="#{GotBean.buildCharacterLocationsByName()}" update="@form"/>
+                                        <p:spacer width="10"/> 
+                                        <p:commandButton type="submit" value="LIMPIAR" styleClass="ui-button-success" actionListener="#{GotBean.clear()}" update="@form" />
+                                    </span>
+                                    <h:panelGroup rendered="#{GotBean.checkLocationsList()}">
+                                        <h5>PERSONAJE: #{GotBean.characterName}</h5>
+                                        <h5>ID: #{GotBean.character.characterId}</h5>
+                                        <h5>SLUG: #{GotBean.character.slug}</h5>
+                                        <p:orderList value="#{GotBean.characterLocations}" var="location" controlsLocation="none" itemLabel="#{location}" itemValue="#{location}" />
+                                    </h:panelGroup>
+                                </div>
+
+                            </p:tab>
+                            <p:tab title="VER TODAS LAS LOCALIZACIONES">
+                                <p:commandButton type="submit" value="MOSTAR TODAS LAS UBICACIONES" styleClass="ui-button-secondary" actionListener="#{GotBean.buildAllCharactersLocation()}" update="@form"/>
+                                <p:spacer width="10"/> 
+                                <p:commandButton type="submit" value="LIMPIAR" styleClass="ui-button-success" actionListener="#{GotBean.clear()}" update="@form" />
+                                <h:panelGroup id="item3pnl" rendered="#{GotBean.checkLocationDataList()}">
+                                    <p:dataTable id="item3locations" var="locationDetail" value="#{GotBean.data}" scrollable="true">
+                                        <p:column headerText="NOMBRE">
+                                            <h:outputText value="#{locationDetail.name}" />
+                                        </p:column>
+                                        <p:column headerText="SLUG">
+                                            <h:outputText value="#{locationDetail.slug}" />
+                                        </p:column>
+                                        <p:column headerText="LOCALIZACIONES">
+                                            <h:outputText value="#{locationDetail.locations}" />
+                                        </p:column>
+                                    </p:dataTable>
+                                </h:panelGroup>
+                            </p:tab>
+                            <p:tab title="VER TODAS LAS CASAS">
+                                <p:commandButton type="submit" value="MOSTAR TODAS LAS CASAS" styleClass="ui-button-secondary" actionListener="#{GotBean.buildAllHouses()}" update="@form"/>
+                                <p:spacer width="10"/> 
+                                <p:commandButton type="submit" value="LIMPIAR" styleClass="ui-button-success" actionListener="#{GotBean.clear()}" update="@form" />
+                                <h:panelGroup id="item5pnl" rendered="#{GotBean.checkHousesList()}">
+                                    <p:dataTable id="item5houses" var="house" value="#{GotBean.houses}" scrollable="true">
+                                        <p:column headerText="CASA">
+                                            <h:outputText value="#{house.name}" />
+                                        </p:column>
+                                        <p:column headerText="ID">
+                                            <h:outputText value="#{house.id}" />
+                                        </p:column>
+                                        <p:column headerText="TITULO">
+                                            <h:outputText value="#{house.titles}" />
+                                        </p:column>
+                                        <p:column headerText="FECHA CREACION">
+                                            <h:outputText value="#{house.createdAt}" >
+                                                <f:convertDateTime pattern="dd.MM.yyyy" />
+                                            </h:outputText>
+                                        </p:column>
+                                        <p:column headerText="FECHA ACTUALIZACION">
+                                            <h:outputText value="#{house.updatedAt}">
+                                                <f:convertDateTime pattern="dd.MM.yyyy" />
+                                            </h:outputText>
+                                        </p:column>
+                                    </p:dataTable>
+                                </h:panelGroup>
+                            </p:tab>
+                            <p:tab title="VER CAMINOS">
+                                <h:form id="pathForm">
+                                    <p:dataTable id="item6path" var="path" value="#{GotBean.paths}" scrollable="true" rowKey="#{path.id}" selection="#{GotBean.selectedCharacterPath}" selectionMode="single">
+                                        <f:facet name="header">
+                                            Click derecho para ver opciones!
+                                        </f:facet>
+                                        <p:column headerText="NOMBRE">
+                                            <h:outputText value="#{path.name}" />
+                                        </p:column>
+                                        <p:column headerText="ID">
+                                            <h:outputText value="#{path.id}" />
+                                        </p:column>
+                                    </p:dataTable>
+                                    <!--No encontre el motivo por el cual no se dispara el metodo "ordenarCaminos". Lo deje de esta manera ya por falta de tiempo-->
+                                    <p:contextMenu for="item6path">
+                                        <p:menuitem value="VER RECORRIDO" update="@form" icon="pi pi-search"
+                                                    oncomplete="PF('pathDialog').show()" actionListener="#{GotBean.ordenarCaminos()}" />
+                                    </p:contextMenu>
+                                    <p:dialog header="Opciones" widgetVar="pathDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false" width="25%">
+                                        <p:outputPanel id="pathDetail" style="text-align:center;">
+                                            <p:dataTable value="#{GotBean.pathsToDisplay}" var="pathToDisplay">
+                                                <p:column headerText="Recorrido">
+                                                    <h:outputText value="#{pathToDisplay}"/>
+                                                </p:column>
+                                            </p:dataTable>
+                                        </p:outputPanel>
+                                    </p:dialog> 
+                                </h:form>>
+                            </p:tab>
+                        </p:accordionPanel>
+                    </div>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>

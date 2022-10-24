@@ -1,2 +1,13 @@
+/home/matias/NetBeansProjects/got-page/src/main/java/com/py/test/got/page/api/got/dto/GetAllCharactersLocationResponseData.java
+/home/matias/NetBeansProjects/got-page/src/main/java/com/py/test/got/page/api/got/dto/CharacterDTO.java
+/home/matias/NetBeansProjects/got-page/src/main/java/com/py/test/got/page/api/got/dto/House.java
+/home/matias/NetBeansProjects/got-page/src/main/java/com/py/test/got/page/api/got/dto/GetCharactersPathResponse.java
+/home/matias/NetBeansProjects/got-page/src/main/java/com/py/test/got/page/beans/GotBean.java
+/home/matias/NetBeansProjects/got-page/src/main/java/com/py/test/got/page/api/got/dto/GetLocationsByNameResponseBody.java
 /home/matias/NetBeansProjects/got-page/src/main/java/com/py/test/got/page/resources/JavaEE8Resource.java
+/home/matias/NetBeansProjects/got-page/src/main/java/com/py/test/got/page/api/got/clients/impl/GotServiceClientImpl.java
+/home/matias/NetBeansProjects/got-page/src/main/java/com/py/test/got/page/api/got/dto/GetAllCharactersLocationResponse.java
 /home/matias/NetBeansProjects/got-page/src/main/java/com/py/test/got/page/JAXRSConfiguration.java
+/home/matias/NetBeansProjects/got-page/src/main/java/com/py/test/got/page/api/got/dto/Path.java
+/home/matias/NetBeansProjects/got-page/src/main/java/com/py/test/got/page/api/got/clients/GotServiceClient.java
+/home/matias/NetBeansProjects/got-page/src/main/java/com/py/test/got/page/api/got/dto/GetAllHousesResponse.java

@@ -1,0 +1,168 @@
+@CHARSET "UTF-8";
+
+
+.inputHora{
+    width:70px;	
+}
+
+.evento1 .fc-event,
+.evento1 a,
+.evento1 .fc-event-inner{
+    background-color: white;
+    border-color: gray;
+    color: #777777;
+    font-size:14px;
+    font-weight:bold;
+}
+.evento2 .fc-event,
+.evento2 a,
+.evento2 .fc-event-inner{
+    background-color: white;
+    border-color: gray;
+    color: red;
+    font-size:14px;
+    font-weight:bold;
+}
+.evento3 .fc-event,
+.evento3 a,
+.evento3 .fc-event-inner{
+    background-color: gray;
+    border-color: gray;
+    color: white;
+    font-size:14px;
+    font-weight:bold;
+}
+.evento4 .fc-event,
+.evento4 a,
+.evento4 .fc-event-inner{
+    background-color: white;
+    border-color: white;
+    color: black;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.nuevo .fc-event{
+    background-color: orange !important;
+}
+.enCurso .fc-event{
+    background-color: darkgreen !important;
+}
+.retrazado.fc-event{
+    background-color: red !important;
+}
+.finalizado .fc-event{
+    background-color: turquoise !important;
+}
+
+
+.ui-selectonemenu-label{
+    /*width:100% !important;*/
+}
+
+
+#form-edit .picklistMaterias table td{
+    border-color: transparent !important;
+}
+
+.align_right{
+    text-align: right;
+}
+.descripcion
+{
+    text-align:left;
+    width:800px;
+}
+
+.grilla td { vertical-align:top !important;  }
+
+.ui-custom-font ui-widget{
+    font-size: 80% !important;    
+}
+.ui-widget {
+    font-family: 'Abel';
+    font-size: 92% !important;
+}
+.fc-week {
+    min-height:92px !important;
+    height:90px !important;
+
+}
+a.glow:hover, a.glow:focus
+{
+    color: #fff;
+    text-shadow: -1px 1px 8px #ffc, 1px -1px 8px #fff;
+}
+a.glow, a.glow:hover, a.glow:focus
+{
+    text-decoration: none;
+    color: #aaf;
+    text-shadow: none;
+    -webkit-transition: 500ms linear 0s;
+    -moz-transition: 500ms linear 0s;
+    -o-transition: 500ms linear 0s;
+    transition: 500ms linear 0s;
+    outline: 0 none;    
+}
+body {
+    font-size: 100% !important;
+
+}
+
+
+.enfecha{
+    background:  darkgreen !important;
+    color:black;
+    font-weight: bold;
+}
+
+.enfechaEspecial{
+    background:  darkorange !important;
+    color:black;
+    font-weight: bold;
+}
+
+.nuevoenfecha{
+    background:  darkgreen !important;
+    color:black;
+    font-weight: bold;
+}
+.ui-button.enfecha { 
+    color: #ffffff;
+    background:darkgreen;
+    border-color: #23a38f;
+    width: 80%; 
+    
+}
+.ui-button.enfechaEspecial { 
+    color: #ffffff;
+    background:darkgreen;
+    border-color: #23a38f;
+    width: 80%; 
+
+}
+.ui-button.atrazado{
+    color: #ffffff;
+    background: red;
+    border-color: #23a38f;
+    width: 80%; 
+}
+.ui-datalist-item:empty {
+    display: none;
+}
+.prioridad-0{
+    background:  darkred !important;
+    color:white !important;
+    font-weight: bold;
+}
+.prioridad-1{
+    background:  darkgoldenrod!important;
+    color:white !important;
+    font-weight: bold;
+}
+.prioridad-2{
+    color:black;
+    font-weight: bold;
+}.card {
+
+}

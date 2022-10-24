@@ -1,2 +1,13 @@
-com/py/test/got/page/resources/JavaEE8Resource.class
+com/py/test/got/page/api/got/dto/GetAllHousesResponse.class
+com/py/test/got/page/api/got/dto/CharacterDTO.class
+com/py/test/got/page/api/got/dto/GetCharactersPathResponse.class
+com/py/test/got/page/api/got/clients/impl/GotServiceClientImpl.class
+com/py/test/got/page/api/got/dto/GetAllCharactersLocationResponse.class
+com/py/test/got/page/api/got/dto/GetLocationsByNameResponseBody.class
+com/py/test/got/page/beans/GotBean.class
+com/py/test/got/page/api/got/dto/Path.class
 com/py/test/got/page/JAXRSConfiguration.class
+com/py/test/got/page/api/got/dto/GetAllCharactersLocationResponseData.class
+com/py/test/got/page/api/got/clients/GotServiceClient.class
+com/py/test/got/page/resources/JavaEE8Resource.class
+com/py/test/got/page/api/got/dto/House.class
